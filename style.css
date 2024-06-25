@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* :root {
+    --variable: value;
+  } */
+
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: #fffaf3;
+  color: #333;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Noto Sans', sans-serif;
+}
+h1 {
+  color: #531f16;
+  text-align: center;
+}
+.container {
+  position: relative;
+  margin: auto;
+  padding: 1.25rem;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: #ff9913;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'Noto Sans', sans-serif;
+  color: #fff;
+  transition: all 300ms ease-in-out;
+  box-shadow: rgba(67, 65, 60, 0.14) 0px 3px 6px,
+    rgba(67, 65, 60, 0.2) 0px 3px 6px;
+}
+.btn:hover {
+  background-color: #ff6e00;
+  box-shadow: rgba(67, 65, 60, 0.3) 0px 1px 2px 0px,
+    rgba(67, 65, 60, 0.15) 0px 2px 6px 2px;
+}
+
+.btn:active {
+  transform: scale(0.975);
+}
+
+.btn:focus,
+select:focus {
+  outline: none;
+}
+
+.btn-toggle {
+  display: block;
+  margin: auto;
+  margin-bottom: 1.25rem;
+}
+.close {
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: right;
+  cursor: pointer;
+  color: #44413e;
+  background: #a2a09f;
+  border-radius: 50%;
+  box-shadow: rgba(67, 65, 60, 0.14) 0px 3px 6px,
+    rgba(67, 65, 60, 0.2) 0px 3px 6px;
+  transition: all 300ms ease-in-out;
+}
+.close:hover {
+  background-color: #fff;
+  color: #44413e;
+  box-shadow: rgba(67, 65, 60, 0.3) 0px 1px 2px 0px,
+    rgba(67, 65, 60, 0.15) 0px 2px 6px 2px;
+}
+.close:active i {
+  transform: scale(0.975);
+}
+.text-box {
+  width: 70%;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -105%);
+  background-color: #44413e;
+  color: #fff;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  box-shadow: rgba(67, 65, 60, 0.25) 0px 14px 28px,
+    rgba(67, 65, 60, 0.22) 0px 10px 10px;
+  transition: all 600ms ease-in-out;
+  z-index: 2;
+}
+
+.text-box.show {
+  transform: translate(-50%, 10%);
+}
+
+.text-box select {
+  background-color: #ffd6a1;
+  color: #44413e;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  width: 100%;
+}
+.text-box textarea {
+  width: 100%;
+  min-height: 128px;
+  padding: 0.5rem;
+  margin: 0.75rem 0;
+  border: 1px solid #dadada;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  font-family: 'Noto Sans', sans-serif;
+}
+.text-box select:focus-visible,
+.text-box select:focus,
+.text-box select:focus-within,
+.text-box textarea:focus-visible,
+.text-box textarea:focus,
+.text-box textarea:focus-within {
+  outline: #ff6e00 solid medium;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  background: #ff9913;
+  box-shadow: rgba(67, 65, 60, 0.3) 0px 2px 2px 0px,
+    rgba(67, 65, 60, 0.15) 0px 3px 6px 2px;
+  transition: all 300ms ease-out;
+}
+.box:hover {
+  background-color: #ff6e00;
+  box-shadow: rgba(67, 65, 60, 0.3) 0px 1px 2px 0px,
+    rgba(67, 65, 60, 0.15) 0px 1px 3px 1px;
+}
+.box.active {
+  background-color: #ff6e00;
+  box-shadow: rgba(67, 65, 60, 0.3) 0px 1px 2px 0px,
+    rgba(67, 65, 60, 0.15) 0px 1px 3px 1px,
+    rgba(255, 153, 19, 0.65) 0px -1px 5px -2px,
+    rgba(255, 153, 19, 0.65) 0px 1px 5px -2px,
+    rgba(255, 153, 19, 0.65) 1px 0px 5px -2px,
+    rgba(255, 153, 19, 0.65) -1px 0px 5px -2px,
+    rgba(255, 153, 19, 0.45) 0px 10px 50px -12px,
+    rgba(255, 153, 19, 0.35) 0px 8px 26px -18px;
+}
+
+.box img {
+  width: 100%;
+  object-fit: cover;
+  height: 144px;
+  border-radius: 0.25rem 0.25rem 0 0;
+  transition: all 300ms ease-out;
+}
+
+.box:hover img {
+  opacity: 0.9;
+}
+.info {
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0 0 0.25rem 0.25rem;
+  text-align: center;
+  color: #fff;
+}
+
+@media (width >= 576px) {
+  .main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (width >= 768px) {
+  .main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (width >= 800px) {
+  .main {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
